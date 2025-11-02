@@ -1,41 +1,29 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { useWindowScroll } from "react-use";
+import { Menu, X } from "lucide-react";
 
 import { NAV_ITEMS } from "@/constants";
-import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const navContainerRef = useRef<HTMLDivElement>(null);
-  const audioElementRef = useRef<HTMLAudioElement>(null);
-
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
 
   const { y: currentScrollY } = useWindowScroll();
 
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prevAudioPlaying) => !prevAudioPlaying);
-    setIsIndicatorActive((prevIndicatorActive) => !prevIndicatorActive);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
   };
-
-  useEffect(() => {
-    if (isAudioPlaying) void audioElementRef.current?.play();
-    else audioElementRef.current?.pause();
-  }, [isAudioPlaying]);
 
   useEffect(() => {
     if (currentScrollY === 0) {
       setIsNavVisible(true);
-      navContainerRef.current?.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
       setIsNavVisible(false);
-      navContainerRef.current?.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
       setIsNavVisible(true);
-      navContainerRef.current?.classList.add("floating-nav");
     }
 
     setLastScrollY(currentScrollY);
@@ -52,61 +40,85 @@ export const Navbar = () => {
   return (
     <header
       ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+      className="fixed inset-x-0 top-0 z-50 bg-[#090d14]  backdrop-blur-sm transition-all duration-300"
     >
-      <div className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          <div className="flex items-center gap-7">
+      <div className="w-full">
+        <nav className="flex items-center justify-between gap-8 px-4 md:px-8">
+          {/* Logo */}
+          <div className="flex items-center">
             <a href="#hero" className="transition hover:opacity-75">
-              <img src="/icon.png" alt="Logo" className="w-20" />
+              <img 
+                src="/quotom.jpg" 
+                alt="Logo" 
+                className="w-16 h-16 rounded-full object-cover" 
+              />
             </a>
           </div>
 
-          <div className="flex h-full items-center">
-            <div className="hidden md:block">
-              {NAV_ITEMS.map(({ label, href }) => (
-                <a
-                  key={href}
-                  href={href}  // Ensure this href corresponds to the section IDs like '#about'
-                  className="nav-hover-btn"
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+  {NAV_ITEMS.map(({ label, href }) => (
+    <a
+      key={href}
+      href={href}
+      className="text-lg font-semibold font-poppins tracking-wide text-gray-200 hover:text-blue-400 transition-colors duration-200"
+    >
+      {label}
+    </a>
+  ))}
+</div>
 
-            <div className="flex items-center gap-4">
-              <button
-                onClick={toggleAudioIndicator}
-                className="ml-10 flex items-center space-x-1 p-2 transition hover:opacity-75"
-                title="Play Audio"
-              >
-                <audio
-                  ref={audioElementRef}
-                  src="/audio/loop2.mp3"
-                  className="hidden"
-                  loop
-                />
 
-                {Array(4)
-                  .fill("")
-                  .map((_, i) => {
-                    return (
-                      <div
-                        key={i + 1}
-                        className={cn(
-                          "indicator-line",
-                          isIndicatorActive && "active"
-                        )}
-                        style={{ animationDelay: `${(i + 1) * 0.1}s` }}
-                      />
-                    );
-                  })}
-              </button>
-            </div>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 text-white transition hover:opacity-75 z-50"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
         </nav>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`md:hidden fixed top-0 right-0 h-screen w-64 bg-black/90 backdrop-blur-md transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col pt-20 px-6 h-full">
+            {NAV_ITEMS.map(({ label, href }, index) => (
+              <a
+  key={href}
+  href={href}
+  className="py-4 text-xl font-poppins font-semibold text-gray-100 hover:text-blue-400 tracking-wide transition-colors duration-200 border-b border-gray-800/50"
+  onClick={() => setIsMobileMenuOpen(false)}
+  style={{
+    animation: isMobileMenuOpen
+      ? `slideInFromRight 0.3s ease-out ${index * 0.1}s both`
+      : "none",
+  }}
+>
+  {label}
+</a>
+
+            ))}
+          </div>
+        </div>
+
+        {/* Backdrop */}
+        {isMobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm -z-10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </div>
+
+    
     </header>
   );
 };

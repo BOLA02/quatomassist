@@ -11,7 +11,7 @@ const Home = () => {
       <main>
         <Hero />
         <About />
-        <Story />
+        <Story /> 
         <Contact />
       </main>
     </div>

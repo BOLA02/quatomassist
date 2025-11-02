@@ -1,44 +1,68 @@
-import { Button } from "./button";
 import { AnimatedTitle } from "./animated-title";
-import { Link } from "react-router-dom"
-
-interface ImageClipBoxProps {
-  src: string;
-  alt: string;
-  clipClass?: string;
-}
-
-const ImageClipBox = ({ src, alt, clipClass }: ImageClipBoxProps) => (
-  <div className={clipClass}>
-    <img src={src} alt={alt} className="w-full h-full object-cover" />
-  </div>
-);
 
 export const Story = () => {
   return (
-    <section id="story" className="min-h-[80vh] w-screen bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-[#0a192f] bg-blend-overlay text-blue-50 flex flex-col items-center px-16">
-      <div className="w-full text-center  mt-10">
-        <AnimatedTitle containerClass="text-6xl">
-          {"OUR RECENT EVENTS"}
+    <section
+      id="story"
+      className="min-h-screen w-full bg-[#090d14] text-white flex flex-col items-center px-6 md:px-16 py-20"
+    >
+      {/* Heading */}
+      <div className="w-full text-center mb-12">
+        <p className="text-cyan-400 uppercase tracking-wider text-sm mb-4 font-semibold">
+          Community Voices
+        </p>
+        <AnimatedTitle containerClass="text-4xl md:text-6xl font-bold text-white">
+          {"IMPACT STORIES FROM OUR COMMUNITY"}
         </AnimatedTitle>
+        <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg">
+          Hear directly from our members about how Quantum Assist has transformed 
+          their journey in technology and empowered them to make a difference.
+        </p>
       </div>
 
-      <div className="w-full flex justify-between items-center mt-8">
-        <div className="w-1/2 flex flex-col items-start -mt-5">
-          <p className="text-lg pb-5 text-violet-50 max-w-md text-justify" style={{ lineHeight: '1.6' }}>
-            Our recent college IoT event gave students hands-on experience with devices like Arduino and Esp32. Guided by seniors and supported by faculty, students explored real-world applications and gained valuable practical knowledge in IoT.
-          </p>
-          <Link to="/events"><Button containerClass="bg-red-500 flex-center gap-1">Events</Button></Link>
-        </div>
-        <div className="w-1/2 flex justify-end relative">
-          <div className="relative w-[400px] h-[300px]">
-            <ImageClipBox
-              src="/img/event.png"
-              alt="Events"
-              clipClass="w-full h-full rounded-lg shadow-lg"
-            />
+      {/* Video Grid */}
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        {/* Featured Video - Large */}
+        <div className="md:col-span-2">
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
+            <div className="aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Featured Impact Story"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <div className="p-6 bg-gradient-to-t from-black/80 to-transparent absolute bottom-0 left-0 right-0">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                Building Together: Our Hackathon Experience
+              </h3>
+              <p className="text-gray-300 text-sm">
+               Teams collaborate on innovative solutions during our annual hackathon.
+              </p>
+            </div>
           </div>
         </div>
+
+
+ 
+      </div>
+
+      {/* Call to Action */}
+      <div className="mt-16 text-center">
+        <p className="text-gray-300 mb-6 text-lg">
+          Want to share your story with our community?
+        </p>
+        <a
+          href="#contact"
+          className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-500/50"
+        >
+          Get In Touch
+        </a>
       </div>
     </section>
   );
