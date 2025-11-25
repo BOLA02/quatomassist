@@ -19,7 +19,6 @@ export const Story = () => {
           their journey in technology and empowered them to make a difference.
         </p>
       </div>
-
       {/* Video Grid */}
       <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {/* Featured Video - Large */}
