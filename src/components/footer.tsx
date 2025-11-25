@@ -69,7 +69,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()}{" "}
-            <strong className="text-white font-semibold">QUANTUM ASSIST</strong>. 
+            <strong className="text-white font-semibold">QUANTOM ASSIST</strong>. 
             All rights reserved.
           </p>
 

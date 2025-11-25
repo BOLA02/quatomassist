@@ -26,7 +26,7 @@ export const Story = () => {
       <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
         <div className="aspect-video">
           <img
-            src="../public/img/student.png"
+            src="../img/student.png"
             alt="Featured Impact Story"
             className="w-full h-full object-cover"
           />
