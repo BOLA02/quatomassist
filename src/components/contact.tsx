@@ -9,7 +9,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className=" w-full bg-[#090d14] text-white flex flex-col items-center px-6 md:px-16 py-20"
+      className=" w-full bg-[#1d3781] text-white flex flex-col items-center px-6 md:px-16 py-20"
     >
       {/* Heading */}
       <motion.div
@@ -45,8 +45,8 @@ export const Contact = () => {
               <Mail className="w-8 h-8 text-black" />
             </div>
             <h4 className="text-white font-semibold text-lg mb-2">Email Us</h4>
-            <p className="text-white-400 text-sm">info@quantumassist.com</p>
-            <p className="text-white-400 text-sm">support@quantumassist.com</p>
+            <p className="text-white-400 text-sm">quantomassist.com</p>
+            <p className="text-white-400 text-sm">quantomassist@gmaiil.com</p>
           </div>
 
           <div className="text-center">
@@ -54,7 +54,8 @@ export const Contact = () => {
               <Phone className="w-8 h-8 text-black" />
             </div>
             <h4 className="text-white font-semibold text-lg mb-2">Call Us</h4>
-            <p className="text-white-400 text-sm">+234 (0) 123 456 7890</p>
+            <p className="text-white-400 text-sm">+234 (0) 703 882 1708</p>
+             <p className="text-white-400 text-sm">+234 (0) 803 302 1484</p>
             <p className="text-white-400 text-sm">Mon - Fri, 9am - 6pm WAT</p>
           </div>
 
@@ -63,7 +64,7 @@ export const Contact = () => {
               <MapPin className="w-8 h-8 text-black" />
             </div>
             <h4 className="text-white font-semibold text-lg mb-2">Visit Us</h4>
-            <p className="text-white-400 text-sm">Kaduna, Kaduna State Nigeria.</p>
+            <p className="text-white-400 text-sm">22b kanta road city center , Kaduna state., Kaduna</p>
             <p className="text-white-400 text-sm">Nigeria</p>
           </div>
         </motion.div>

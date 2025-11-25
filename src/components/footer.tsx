@@ -2,7 +2,7 @@ import { SOCIAL_LINKS } from "@/constants";
 
 export const Footer = () => {
   return (
-    <footer className="w-screen bg-gradient-to-b from-gray-900 to-black border-t border-white/10">
+    <footer className="w-screen bg-[#1d3781] border-t border-white/10">
       <div className="container mx-auto px-6 py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

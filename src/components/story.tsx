@@ -4,7 +4,7 @@ export const Story = () => {
   return (
     <section
       id="story"
-      className="min-h-screen w-full bg-[#090d14] text-white flex flex-col items-center px-6 md:px-16 py-20"
+      className="min-h-screen w-full bg-[#1d3781] text-white flex flex-col items-center px-6 md:px-16 py-20"
     >
       {/* Heading */}
       <div className="w-full text-center mb-12">
@@ -21,32 +21,27 @@ export const Story = () => {
       </div>
 
       {/* Video Grid */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {/* Featured Video - Large */}
         <div className="md:col-span-2">
-          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
-            <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Featured Impact Story"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
-            <div className="p-6 bg-gradient-to-t from-black/80 to-transparent absolute bottom-0 left-0 right-0">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                Building Together: Our Hackathon Experience
-              </h3>
-              <p className="text-gray-300 text-sm">
-               Teams collaborate on innovative solutions during our annual hackathon.
-              </p>
-            </div>
-          </div>
+      <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
+        <div className="aspect-video">
+          <img
+            src="../public/img/student.jpeg"
+            alt="Featured Impact Story"
+            className="w-full h-full object-cover"
+          />
         </div>
+        <div className="p-6 bg-gradient-to-t from-black/80 to-transparent absolute bottom-0 left-0 right-0">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+            Building Together: Our Hackathon Experience
+          </h3>
+          <p className="text-gray-300 text-sm">
+            Teams collaborate on innovative solutions during our annual hackathon.
+          </p>
+        </div>
+      </div>
+    </div>
 
 
  

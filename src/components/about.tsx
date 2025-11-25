@@ -50,8 +50,10 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen w-full bg-[#090d14] flex flex-col items-center justify-center overflow-hidden py-20"
+      className="relative min-h-screen w-full bg-[#1d3781] flex flex-col items-center justify-center overflow-hidden py-20"
     >
+
+      
       {/* Section Title */}
       <div className="mb-12 text-center px-6">
         <p className="font-general text-sm uppercase text-blue-100 tracking-widest">
