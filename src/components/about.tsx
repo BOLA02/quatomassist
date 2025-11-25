@@ -54,23 +54,26 @@ export const About = () => {
     >
 
       
-      {/* Section Title */}
-      <div className="mb-12 text-center px-6">
-        <p className="font-general text-sm uppercase text-blue-100 tracking-widest">
-          JOIN OUR CIRCLE
-        </p>
+    
+    {/* Section Title */}
+<div className="mb-12 text-center px-6">
+  <p className="font-general text-xs md:text-sm uppercase text-blue-100 tracking-widest">
+    JOIN OUR CIRCLE
+  </p>
 
-        <AnimatedTitle containerClass="mt-5 !text-white text-center">
-          {
-            "<b>20,000+</b> <b>community</b> <b>members</b> <br /><b>across</b> <b>70+</b> <b>schools</b>"
-          }
-        </AnimatedTitle>
+  <AnimatedTitle containerClass="mt-3 !text-white text-center text-xl md:text-4xl">
+    {
+      "<b>20,000+</b> <b>community</b> <b>members</b> <br /><b>across</b> <b>70+</b> <b>schools</b>"
+    }
+  </AnimatedTitle>
 
-        <p className="max-w-2xl mx-auto text-gray-300 leading-relaxed mt-4">
-          Our community thrives on collaboration and innovation. Whether you’re just starting
-          or mentoring the next generation, there’s a place for you here.
-        </p>
-      </div>
+  <p className="max-w-sm sm:max-w-md md:max-w-xl mx-auto text-gray-300 leading-snug mt-1 text-xs sm:text-sm md:text-base">
+  Our community thrives on collaboration and innovation. Whether you’re just
+  starting or mentoring the next generation, there’s a place for you here.
+</p>
+
+</div>
+
 
       {/* Content Container */}
       <div

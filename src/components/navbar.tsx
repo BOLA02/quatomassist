@@ -52,55 +52,42 @@ export const Navbar = () => {
     >
       <div className="w-full">
         <nav className="relative z-30 flex items-center justify-between px-6 md:px-12 py-3 md:py-4">
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-8 lg:gap-12 text-white text-sm font-light tracking-wider">
-            {NAV_ITEMS.map(({ label, href }) => (
-              <li key={href}>
-                <a 
-                  href={href}
-                  className="cursor-pointer hover:text-cyan-400 transition-colors"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
 
-          {/* Mobile Logo */}
-          <div className="md:hidden flex items-center">
-            <a href="#hero" className="transition hover:opacity-75">
-              <img 
-                src="/q.png" 
-                alt="Logo" 
-                className="w-16 h-16 rounded-full object-cover" 
-              />
-            </a>
-          </div>
+  {/* Desktop Navigation */}
+  <ul className="hidden md:flex gap-8 lg:gap-12 text-white text-sm font-light tracking-wider">
+    {NAV_ITEMS.map(({ label, href }) => (
+      <li key={href}>
+        <a href={href} className="cursor-pointer hover:text-cyan-400 transition-colors">
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
 
-          {/* Logo Button (Desktop) */}
-        <div className=" flex items-center">
-            <a href="#hero" className="transition hover:opacity-75">
-              <img 
-                src="/q.png" 
-                alt="Logo" 
-                className="w-16 h-16 rounded-full object-cover" 
-              />
-            </a>
-          </div>
+  {/* Mobile Logo */}
+  <div className="flex md:hidden items-center">
+    <a href="#hero">
+      <img src="/q.png" className="w-14 h-14 rounded-full object-cover" />
+    </a>
+  </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden p-2 text-white transition hover:opacity-75 z-50"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </nav>
+  {/* Desktop Logo */}
+  <div className="hidden md:flex items-center">
+    <a href="#hero">
+      <img src="/q.png" className="w-16 h-16 rounded-full object-cover" />
+    </a>
+  </div>
+
+  {/* Mobile Menu Button */}
+  <button
+    onClick={toggleMobileMenu}
+    className="md:hidden p-2 text-white transition hover:opacity-75 z-50"
+  >
+    {isMobileMenuOpen ? <X /> : <Menu />}
+  </button>
+
+</nav>
+
 
         {/* Mobile Menu Overlay */}
         <div

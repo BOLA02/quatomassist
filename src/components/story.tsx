@@ -8,17 +8,22 @@ export const Story = () => {
     >
       {/* Heading */}
       <div className="w-full text-center mb-12">
-        <p className="text-cyan-400 uppercase tracking-wider text-sm mb-4 font-semibold">
-          Community Voices
-        </p>
-        <AnimatedTitle containerClass="text-4xl md:text-6xl font-bold text-white">
-          {"IMPACT STORIES FROM OUR COMMUNITY"}
-        </AnimatedTitle>
-        <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg">
-          Hear directly from our members about how Quantum Assist has transformed 
-          their journey in technology and empowered them to make a difference.
-        </p>
-      </div>
+  <p className="text-cyan-400 uppercase tracking-wider text-xs md:text-sm mb-3 font-semibold">
+    Community Voices
+  </p>
+
+  <AnimatedTitle
+  containerClass="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold text-white leading-tight break-words max-w-[90%] mx-auto text-center"
+>
+    {"IMPACT STORIES FROM OUR COMMUNITY"}
+  </AnimatedTitle>
+
+  <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+    Hear directly from our members about how Quantum Assist has transformed
+    their journey in technology and empowered them to make a difference.
+  </p>
+</div>
+
       {/* Video Grid */}
       <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {/* Featured Video - Large */}
