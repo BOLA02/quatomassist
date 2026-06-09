@@ -22,9 +22,11 @@ export const Contact = () => {
         <p className="text-cyan-400 uppercase tracking-wider text-sm mb-4 font-semibold">
           Get In Touch
         </p>
-        <AnimatedTitle containerClass="text-4xl md:text-6xl font-bold text-white">
-          {"CONTACT US"}
-        </AnimatedTitle>
+        <AnimatedTitle 
+          text="Let's build the future of tech together." 
+          containerClass="mt-5 text-center text-4xl font-black" 
+        />
+
         <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg">
           Have questions or want to join our community? We'd love to hear from you.
           Reach out and let's start a conversation.
