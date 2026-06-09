@@ -28,7 +28,7 @@ export const Hero = () => {
         <div className="flex flex-col justify-center max-w-2xl text-center md:text-left">
           {/* Combined text block and increased font-weight to resolve background bleeding */}
           <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-2 uppercase drop-shadow-md">
-            QUANTUM
+            QUANTOM
           </h1>
           <h2 className="text-cyan-400 text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-6 md:mb-8 uppercase drop-shadow-md">
             ASSIST

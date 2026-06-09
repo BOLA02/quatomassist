@@ -66,7 +66,7 @@ export const Contact = () => {
               <MapPin className="w-8 h-8 text-black" />
             </div>
             <h4 className="text-white font-semibold text-lg mb-2">Visit Us</h4>
-            <p className="text-white-400 text-sm">22b kanta road city center , Kaduna state., Kaduna</p>
+            <p className="text-white-400 text-sm">22b kanta road, Kaduna city., Kaduna state</p>
             <p className="text-white-400 text-sm">Nigeria</p>
           </div>
         </motion.div>
